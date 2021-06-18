@@ -797,7 +797,7 @@ class MarkerManager {
     bounds2: GridBounds,
     callback: (x: number, y: number, z: number) => void
   ): void {
-    this._rectangleDiffCoords(bounds1, bounds2, function(x, y) {
+    this._rectangleDiffCoords(bounds1, bounds2, (x, y) => {
       callback(x, y, bounds1.z);
     });
   }
