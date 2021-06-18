@@ -21,7 +21,7 @@ The MarkerManager places its markers onto a grid, similar to the map tiles. When
 
 ## Documentation
 
-The reference documentation can be found at this [link](https://googlemaps.github.io/js-markermanager/modules/_googlemaps_markermanager.html).
+The reference documentation can be found at this [link](https://googlemaps.github.io/js-markermanager).
 
 ## Examples
 
