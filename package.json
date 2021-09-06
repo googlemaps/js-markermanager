@@ -33,7 +33,7 @@
     "build": "rm -rf dist && rollup -c"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-env": "^7.15.4",
     "@babel/runtime-corejs3": "^7.15.4",
     "@googlemaps/jest-mocks": "^1.2.0",
     "@rollup/plugin-html": "^0.2.3",
@@ -42,7 +42,7 @@
     "@types/google.maps": "^3.45.6",
     "@types/jest": "^27.0.1",
     "@types/selenium-webdriver": "^4.0.15",
-    "@typescript-eslint/eslint-plugin": ">=4.29.3",
+    "@typescript-eslint/eslint-plugin": ">=4.30.0",
     "@typescript-eslint/parser": ">=4.29.3",
     "chromedriver": "^92.0.1",
     "core-js": "^3.16.4",
