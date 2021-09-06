@@ -43,7 +43,7 @@
     "@types/jest": "^27.0.1",
     "@types/selenium-webdriver": "^4.0.15",
     "@typescript-eslint/eslint-plugin": ">=4.30.0",
-    "@typescript-eslint/parser": ">=4.29.3",
+    "@typescript-eslint/parser": ">=4.30.0",
     "chromedriver": "^93.0.1",
     "core-js": "^3.17.2",
     "eslint": "^7.32.0",
