@@ -88,11 +88,11 @@
                 var icon = getIcon(place["icon"]);
 
                 var title = place["name"];
-                var posn = new google.maps.LatLng(
-                  place["posn"][0],
-                  place["posn"][1]
+                var position = new google.maps.LatLng(
+                  place.position[0],
+                  place.position[1]
                 );
-                var marker = createMarker(posn, title, getIcon(place["icon"]));
+                var marker = createMarker(position, title, getIcon(place["icon"]));
                 markers.push(marker);
                 allmarkers.push(marker);
               }
@@ -104,10 +104,10 @@
         updateStatus(mgr.getMarkerCount(map.getZoom()));
       }
 
-      function createMarker(posn, title, icon) {
+      function createMarker(position, title, icon) {
         var markerOptions = {
-          position: posn,
-          title: title
+          position,
+          title,
         };
         if (icon !== false) {
           markerOptions.shadow = icon.shadow;
