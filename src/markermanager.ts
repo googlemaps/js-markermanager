@@ -16,8 +16,8 @@
 
 /// <reference types="@types/google.maps" />
 
-import { latLngToPixel } from "./utils";
-import { GridBounds } from "./gridbounds";
+import {latLngToPixel} from './utils';
+import {GridBounds} from './gridbounds';
 
 interface Options {
   maxZoom?: number;
@@ -40,9 +40,9 @@ class MarkerManager {
   private _trackMarkers: boolean;
   private _swPadding: google.maps.Size;
   private _nePadding: google.maps.Size;
-  private _gridWidth: { [k: string]: number };
+  private _gridWidth: {[k: string]: number};
   private _grid: google.maps.Marker[][][][];
-  private _numMarkers: { [k: string]: number };
+  private _numMarkers: {[k: string]: number};
   private _shownBounds: GridBounds;
 
   /**
@@ -52,7 +52,7 @@ class MarkerManager {
    */
   constructor(
     map: google.maps.Map,
-    { maxZoom = 19, trackMarkers, shown = true, borderPadding = 100 }: Options
+    {maxZoom = 19, trackMarkers, shown = true, borderPadding = 100}: Options
   ) {
     this._map = map;
     this._mapZoom = map.getZoom();
@@ -72,7 +72,7 @@ class MarkerManager {
     this.shownMarkers = 0;
     this.shown = shown;
 
-    google.maps.event.addListenerOnce(map, "idle", () => {
+    google.maps.event.addListenerOnce(map, 'idle', () => {
       this._initialize();
     });
   }
@@ -86,7 +86,7 @@ class MarkerManager {
       if (
         sType in mapTypes &&
         mapTypes.get(sType) &&
-        mapTypes.get(sType).maxZoom === "number"
+        mapTypes.get(sType).maxZoom === 'number'
       ) {
         const mapTypeMaxZoom = this._map.mapTypes.get(sType).maxZoom;
         if (mapTypeMaxZoom > mapMaxZoom) {
@@ -97,19 +97,19 @@ class MarkerManager {
 
     google.maps.event.addListener(
       this._map,
-      "dragend",
+      'dragend',
       this._onMapMoveEnd.bind(this)
     );
 
     google.maps.event.addListener(
       this._map,
-      "idle",
+      'idle',
       this._onMapMoveEnd.bind(this)
     );
 
     google.maps.event.addListener(
       this._map,
-      "zoom_changed",
+      'zoom_changed',
       this._onMapMoveEnd.bind(this)
     );
 
@@ -117,7 +117,7 @@ class MarkerManager {
 
     this._shownBounds = this._getMapGridBounds();
 
-    google.maps.event.trigger(this, "loaded");
+    google.maps.event.trigger(this, 'loaded');
   }
   /**
    * This closure provide easy access to the map.
@@ -205,14 +205,14 @@ class MarkerManager {
     maxZoom: number
   ): void {
     const mPoint = marker.getPosition();
-    marker.set("__minZoom", minZoom);
+    marker.set('__minZoom', minZoom);
 
     // Tracking markers is expensive, so we do this only if the
     // user explicitly requested it when creating marker manager.
     if (this._trackMarkers) {
       google.maps.event.addListener(
         marker,
-        "changed",
+        'changed',
         (
           marker: google.maps.Marker,
           oldPoint: google.maps.LatLng,
@@ -357,7 +357,7 @@ class MarkerManager {
     if (changed) {
       this._notifyListeners();
     }
-    this._numMarkers[marker.get("__minZoom")]--;
+    this._numMarkers[marker.get('__minZoom')]--;
   }
 
   /**
@@ -424,7 +424,7 @@ class MarkerManager {
       new google.maps.Size(0, 0)
     );
 
-    let marker = new google.maps.Marker({ position: mPoint });
+    let marker = new google.maps.Marker({position: mPoint});
 
     const cell = this._getGridCellNoCreate(gridPoint.x, gridPoint.y, zoom);
     if (cell !== undefined) {
@@ -713,7 +713,7 @@ class MarkerManager {
   private _notifyListeners(): void {
     google.maps.event.trigger(
       this,
-      "changed",
+      'changed',
       this._shownBounds,
       this.shownMarkers
     );
@@ -878,4 +878,4 @@ class MarkerManager {
   }
 }
 
-export { MarkerManager };
+export {MarkerManager};
