@@ -1,7 +1,7 @@
 # MarkerManager
 
 [![npm](https://img.shields.io/npm/v/@googlemaps/markermanager)](https://www.npmjs.com/package/@googlemaps/markermanager)
-![Build](https://github.com/googlemaps/js-markermanager/workflows/Build/badge.svg)
+![Build](https://github.com/googlemaps/js-markermanager/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/js-markermanager/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/googlemaps/js-markermanager/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-markermanager)
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/js-markermanager?color=green)
