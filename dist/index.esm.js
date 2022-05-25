@@ -446,7 +446,7 @@ class MarkerManager {
      * @return {Array} The cell in the array.
      */
     _getGridCellCreate(x, y, z) {
-        // TODO(jpoehnelt) document this
+        // TODO document this
         if (x < 0) {
             x += this._gridWidth[z];
         }
