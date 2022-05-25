@@ -485,7 +485,7 @@ class MarkerManager {
     y: number,
     z: number
   ): google.maps.Marker[] {
-    // TODO(jpoehnelt) document this
+    // TODO document this
     if (x < 0) {
       x += this._gridWidth[z];
     }
