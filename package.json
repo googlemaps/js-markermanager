@@ -33,7 +33,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-env": "^7.24.0",
     "@babel/runtime-corejs3": "^7.24.0",
     "@googlemaps/jest-mocks": "^2.19.0",
     "@rollup/plugin-babel": "^6.0.4",
